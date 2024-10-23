@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fira+Code&family=Poppins&family=Rubik+Mono+One&display=swap&family=Roboto&family=Rubik+Mono+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Code', monospace;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --primary-clr: #000000;
+    --secondary-clr: #1cb8e7;
+
+    --header-dark-mode-clr: #1f1f1f;
+    --background-dark: #000000;
+    --background-light: #f1f1f1;
+
+    --input-border-size: 3px;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #31e404, #efeff0, #f1bf0a);
+    color: var(--primary-clr);
+    transition: background 0.5s ease-in-out;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+body.dark-mode {
+    background: linear-gradient(135deg, #1a1a2e, #e04b06);
+    color: var(--primary-clr);
+}
+
+
+.header-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 40px;
+}
+
+.app-name {
+    font-weight: 600;
+    margin-right: 15%;
+    margin-bottom: 10%;
+}
+
+iconify-icon {
+    color: rgb(225, 225, 50);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform .1s linear;
+}
+
+iconify-icon:active {
+    transform: scale(.9);
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 0 20px rgba(224, 14, 14, 0.5);
+    animation: fadeIn 1s ease-in-out;
+    max-width: 500px; /* Reduced max-width */
+    width: 90%; /* Ensure responsiveness */
+}
+
+.location-input {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 1.6rem; /* Reduce font-size */
+}
+
+input {
+    font-size: 1.2rem; /* Reduce font-size */
+    font-weight: bold;
+    background-color: transparent;
+    color: var(--primary-clr);
+    padding: 0 4px;
+    max-width: 180px; /* Reduce max-width */
+    border: none;
+    outline: none;
+    border-bottom: var(--input-border-size) solid var(--primary-clr);
+    transition: border 0.3s ease-in-out;
+}
+
+input:focus {
+    border: var(--input-border-size) solid var(--secondary-clr);
+}
+
+.condition {
+    padding-top: 3rem;
+    font-size: 1.5rem; 
+    font-weight: 600;
+}
+
+.temp-location-container {
+    margin-top: 1.5rem; /* Reduced margin */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.degree {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 120px; /* Reduced font-size */
+}
+
+.temperature {
+    font-size: 90px; /* Reduced font-size */
+}
+
+.location {
+    font-size: 1.2rem; /* Reduced font-size */
+}
+
+.extra-data {
+    margin-top: 1rem; /* Reduced margin */
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.data-number {
+    font-weight: bold;
+    font-size: 1.6rem; /* Reduced font-size */
+}
+
+.data-info {
+    font-size: 1.2rem; /* Reduced font-size */
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 700px) {
+    .main-container {
+        font-size: 1.6rem;
+    }
+
+    .degree {
+        font-size: 150px;
+    }
+
+    .temperature {
+        font-size: 100px;
+    }
+
+    .location {
+        font-size: 1.5rem;
+    }
+
+    .data-number {
+        font-size: 1.4rem;
+    }
+
+    .data-info {
+        font-size: 1rem;
+    }
+
+    .location-input {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .extra-data {
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .location-input {
+        justify-content: flex-start;
+    }
+
+    .main-container {
+        font-size: 1.4rem;
+    }
+
+    .degree {
+        font-size: 135px;
+    }
+
+    .temperature {
+        font-size: 90px;
+    }
+
+    .location {
+        font-size: 1.2rem;
+    }
+
+    .data-number {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 390px) {
+    #search-bar {
+        width: 180px;
+    }
+
+    .app-name {
+        font-size: 28px;
+    }
+
+    .degree {
+        font-size: 120px;
+    }
+
+    .temperature {
+        font-size: 70px;
+    }
+
+    .location {
+        font-size: 1rem;
+    }
+
+    .data-number {
+        font-weight: bold;
+        font-size: 1rem;
+    }
+}
